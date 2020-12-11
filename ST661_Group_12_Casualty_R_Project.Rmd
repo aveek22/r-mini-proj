@@ -91,7 +91,9 @@ ggplot(s4, aes(x=Road.User.Type,y=value, fill=Road.User.Type)) +
   geom_col() +
   ggtitle("Younger casualties") +
   scale_fill_manual(values = c("#8489EF", "#E7B800", "#AC1E07","#F45788")) + 
-  facet_wrap(~Age.Group,scale="free_y")
+  facet_wrap(~Age.Group,scale="free_y") +
+  theme(axis.text.x = element_text(angle = 90 , 
+                                   hjust = 1, vjust = 0))
 ```
 
 So we can determine that the main cause of casualties among the younger road users is from car accidents. Notably the youngest group in the graph above being a car passenger is the biggest cause of casualty for the 15-17 year olds. 
