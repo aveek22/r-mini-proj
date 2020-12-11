@@ -116,7 +116,7 @@ ggplot(sub10,aes(Year,Road.User.Type))+
 
 ```
 
-Above the heatmap for 21-34 year olds grouped together gives shows the domination of the Car drivers category in terms of casualties, the darkest colour in 2009 allows us to see that this was a particularly bad year casualty-wise. On a lighter note the values lower now than they were at this peak in 2009, as indicated by the lighter shades of blue. 
+Above the heatmap for 21-34 year olds grouped together shows the domination of the Car drivers category in terms of casualties, the darkest colour in 2009 allows us to see that this was a particularly bad year casualty-wise. On a lighter note the values lower now than they were at this peak in 2009, as indicated by the lighter shades of blue. 
 Interestingly pedal cyclists seem to be getting involved in more accidents as their colour ramp gets darker as we move along the graph from 2005 to 2018.
 
 ```{r}
