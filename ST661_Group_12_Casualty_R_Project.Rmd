@@ -1,6 +1,6 @@
 ---
-title: "R_PROJECT"
-author: "Jack Francis Hickey, Kaimo Zhang, Aveek Das, James Doherty Ferris"
+title: "ST661 R_PROJECT"
+author: "__Group: 12__ - Jack Francis Hickey, Kaimo Zhang, Aveek Das, James Doherty Ferris"
 date: "12/11/2020"
 output: html_document
 ---
