@@ -204,12 +204,13 @@ p18<-ggplot(data=sub6, aes(x=Age.Group, y=value, fill=Road.User.Type), position 
 grid.arrange(p17,p18,layout_matrix = rbind(c(1, 2)))
 ```
 
+In the above we can see that the most affected road users age group is the one between 24 to 35 years. Upon further analysis into this age group, we see that the car drivers in this age group had major casualties and the motor cyclists had the least. This can also be supported by the fact that the number of car drivers are much higher as compared to the motor cyclists on an average.
 
 ```{r, echo=FALSE}
-p<-ggplot(data=df, aes(x=Road.User.Type, y=value)) +
-  geom_bar(stat="identity") +
-  coord_flip()
-p
+# p<-ggplot(data=df, aes(x=Road.User.Type, y=value)) +
+#   geom_bar(stat="identity") +
+#   coord_flip()
+# p
 ```
 
 
@@ -271,17 +272,37 @@ df.male.car_drivers = df[df$Road.User.Type == "Car drivers" & df$Sex == 'Male', 
 sum.male.car_drivers <- aggregate(value~Year, df.male.car_drivers, sum)
 killed.male.prop = round(sum.killed.male.car_drivers$value/sum.male.car_drivers$value, 2)
 killed.male.prop
+
+
+df.prop.killed <- data.frame(
+  "Year" = c(2005:2018),
+  "Male" = killed.male.prop,
+  "Female" = killed.female.prop
+)
+
+ggplot(data=df.prop.killed, aes(x=Year)) +
+  geom_line(aes(y=Male), color="darkred") +
+  geom_line(aes(y=Female), color="steelblue", linetype="twodash") +    coord_cartesian(ylim = c(0, 0.2))
+
+
 ```
 
-Categorical Count of Age Group Wise Casualties for 14 years.
+As we can see from the above line graph, there is a downward trend in the proportion of the killed casualties in both male and female.
+
+
+####Categorical Count of Age Group Wise Casualties for 14 years.
 
 ```{r, echo=FALSE}
 ggplot(data=df, aes(x=Age.Group, y=value, fill=Statistic), position = "fill") +
-  geom_bar(stat="identity")
+  geom_bar(stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust = 0),
+        axis.line = element_blank(),
+        axis.ticks.x = element_blank())
 ```
 
 
-The age group containing 25-34 years has the highest number of casualities.
+The age group containing 25-34 years has the highest number of casualties.
 
 From the above we can conclude that the Road User Type of Pedal Cyclist has an increasing trend of casualties over the years. However, the proportions of fatalities is minimum.
 
