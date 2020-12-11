@@ -357,26 +357,31 @@ Interestingly when we look into the gender differences between the 25-34 year ol
 
 
 
-Killed Casualties divided by Age.Group & Sex
 ```{r}
-ggplot(data = df3) + geom_col(mapping = aes(x = Age.Group, y=value, fill=Sex))+coord_flip()
+ggplot(data = df3) + geom_col(mapping = aes(x = Age.Group, y=value, fill=Sex))+coord_flip()+scale_fill_manual(values = c('Male'="#FFB11B", 'Female'="#535953"))+ggtitle("Killed Casualties by Age.Group & Sex")
 ```
+There are more males killed than females. Killed figures of females rise ralatively to males as age increases. 25-34 years age group has the most killed.
 
-Injured Cassualties divided by Age.Group & Sex
+
+
 ```{r}
-ggplot(data = df4) + geom_col(mapping = aes(x = Age.Group, y=value, fill=Sex))+coord_flip()
+ggplot(data = df4) + geom_col(mapping = aes(x = Age.Group, y=value, fill=Sex))+coord_flip()+scale_fill_manual(values = c('Male'="#FFB11B", 'Female'="#535953")) +ggtitle("Injured Casualties by Age.Group & Sex")
 ```
+There are more males injured than females. The chances for females to get injured is much higher than to get killed when compared to males. 25-34 years age group has the most killed.
 
-Killed Casualties divided by Year & Gender
+
+
 ```{r}
-ggplot(data = df1) + geom_col(mapping = aes(x = Year, y=value, fill=Sex))+coord_flip()
+ggplot(data = df1) + geom_col(mapping = aes(x = Year, y=value, fill=Sex))+coord_flip()+scale_fill_manual(values = c('Male'="#FFB11B", 'Female'="#535953")) +ggtitle("Killed Casualties by Year & Sex")
 ```
+The numbers of killed decreases as years increases both for males and females. Less females are killed as opposed to males.
 
-Injured Cassualties divided by Year & Gender
+
 ```{r}
-ggplot(data = df2) + geom_col(mapping = aes(x = Year, y=value, fill=Sex))+coord_flip()
+ggplot(data = df2) + geom_col(mapping = aes(x = Year, y=value, fill=Sex))+coord_flip()+scale_fill_manual(values = c('Male'="#FFB11B", 'Female'="#535953")) +ggtitle("Injured Casualties by Year & Sex")
 
 ```
+The numbers of injured do not go down as year increases. The chances for females to get injured is much higher than to get killed when compared to males.
 
 ## Conclusion
 
