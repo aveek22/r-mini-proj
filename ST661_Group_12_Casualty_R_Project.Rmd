@@ -92,8 +92,7 @@ ggplot(s4, aes(x=Road.User.Type,y=value, fill=Road.User.Type)) +
   ggtitle("Younger casualties") +
   scale_fill_manual(values = c("#8489EF", "#E7B800", "#AC1E07","#F45788")) + 
   facet_wrap(~Age.Group,scale="free_y") +
-  theme(axis.text.x = element_text(angle = 90 , 
-                                   hjust = 1, vjust = 0))
+  theme(axis.text.x = element_blank())
 ```
 
 So we can determine that the main cause of casualties among the younger road users is from car accidents. Notably the youngest group in the graph above being a car passenger is the biggest cause of casualty for the 15-17 year olds. 
@@ -135,7 +134,7 @@ summary(f)
 Now this second linear model without the gender input shows us predicted values in the Estimate comlumn for b0,b1,b2,b3. The interesting values of this linesr model are the age group categories and the model says that for for a one unit(person) rise in people aged 25-34 we expect an increase in casualties by 136.25, where as only a rise of 27.13 for an increase of one unit of people aged 21-24. 
 This is interesting as it backs up the original claim that the most dangerous drivers are belonging to the 25-34 year old cohort. 
 
-```{r}
+```{r, echo=FALSE}
 RSA_data <- read_csv("RSA_data.csv")
 rsatot_allages<- RSA_data[RSA_data$Year=="2018" & RSA_data$`Age Group`=="All ages",]
 rsatot_young<- RSA_data[RSA_data$Year=="2018" & (RSA_data$`Age Group`=="17 - 20 years" | RSA_data$`Age Group`=="21 - 24 years"),]
@@ -160,16 +159,12 @@ older_total/sum_older
 ```
 
 
-The calculations above show that according to the RSA (https://data.cso.ie/), in 2018 there was 233,187 drivers aged 17-24 with Irish licenses (full or provisional) on our roads.
+We calculated that according to the RSA (https://data.cso.ie/), in 2018 there was 233,187 drivers aged 17-24 with Irish licenses (full or provisional) on our roads.
 Using values from the Casualties data, calculated that the proportion of these drivers to be recorded killed or injured was = ~0.1166, hence about 1 in 9 drivers 17-24 were classified as injured or killed, thankfully of this number the big majority was injured as seen earlier (this statistic is not taking into account those who were unlucky enough to be a casualty twice in 2018).
 Now when we do this calculation for the whole population we get the much smaller proportion of ~0.0347 or about 1 in 29 drivers of the total driving population.
  
 So when we compare the younger drivers to the overall population they are about 3 times more likely to become a casualty from driving a car. 
 
-
-<<older_total<-sum(w3$value) #here w3 is the 25-34 year olds>>
-<<older_total/sum_older>>
-This code above was just done in order to slightly clarify the fact that the younger drivers present more of a danger on the roads, the data doesnt match up, it is dividing the casualties for 24-35 year olds by the total irish 30-39 year olds, which gives a proportion of ~0.0396. Since the RSA data and the casualty data didnt quite match up this is the closest we can do.
 
 
 ### Road User Type Analysis
