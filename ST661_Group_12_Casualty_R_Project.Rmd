@@ -24,7 +24,8 @@ __Responsibilities:__
 * Road User Type Analysis - Aveek Das
 * Gender Analysis - Kaimo Zhang
 
-Although we divided the tasks and shared responsibilities, it was a true collaboration and we discussed the analysis.
+
+Although we divided the tasks and shared responsibilities, it was a collaboration of efforts and input was made into each group by all four of us. Final analysis and conclusions were a joint effort.
 
 
 ## Cleaning
